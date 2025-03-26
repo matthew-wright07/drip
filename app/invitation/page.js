@@ -21,7 +21,7 @@ export default function Invitation() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Invite your partner</h1>
-      <p className={styles.subtitle}>Trust me, it won't be any fun without them.</p>
+      <p className={styles.subtitle}>Trust me, it won&apost be any fun without them.</p>
 
       <form>
         <div className={styles.formGroup}>

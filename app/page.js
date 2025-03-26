@@ -11,7 +11,7 @@ export default function Home() {
         <h1>
           What if asking for what you
           <br />
-          want... didn't feel like
+          want... didn&apost feel like
           <br />
           asking?
         </h1>
