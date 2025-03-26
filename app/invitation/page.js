@@ -10,6 +10,7 @@ export default function Invitation() {
   const [customMessage, setCustomMessage] = useState(false);
   const [email, setEmail] = useState('');
   const [name,setName] = useState('');
+  const [done,setDone] = useState(false)
 
   function handleMessageToggle(event){
     event.preventDefault();
@@ -31,6 +32,7 @@ export default function Invitation() {
       body: JSON.stringify({email:email,message:message,name:name}),
     })
     const data = await response.json()
+    setDone(true)
   }
 
   return (
@@ -66,6 +68,7 @@ export default function Invitation() {
         <button type="submit" className={styles.continueButton}>
           Invite
         </button>
+        {done?<p className={styles.done}>Email Sent</p>:null}
       </form>
     </div>
   );

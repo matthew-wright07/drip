@@ -6,12 +6,14 @@ import styles from './registration.module.css';
 export default function Registration() {
     const [firstName, setFirstName] = useState('');
     const [email, setEmail] = useState('');
+    const [done,setDone] = useState(false)
     async function sendEmail(){
         const response = await fetch('/api/email',{
             method:"POST",
             body: JSON.stringify({firstName:firstName,email:email})
         })
         const data = await response.json()
+        setDone(true)
     }
     function handleNameChange(event){
         setFirstName(event.target.value)
@@ -34,6 +36,7 @@ export default function Registration() {
                 </div>
 
                 <button type="submit" className={styles.enterButton}>Submit</button>
+                {done?<p className={styles.done}>Email Sent</p>:null}
             </form>
         </div>
 )
