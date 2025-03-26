@@ -17,7 +17,7 @@
 
 .formGroup {
     margin-bottom: 30px;
-    text-align: left;
+    text-align: center;
 }
 
 .formGroup input {
@@ -54,6 +54,7 @@
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 300ms ease;
+    text-decoration:none;
 }
 
 .enterButton:hover {
