@@ -36,8 +36,8 @@ export default function Questions() {
             <div className={styles.questionFlex}>
                 <h2>What tends to get in the way? (choose all that apply)</h2>
                 <div><input type="checkbox" id="apple" name="fruits" value="apple" />We get too busy</div>
-                <div><input type="checkbox" id="apple" name="fruits" value="apple" />We don&apos;t always make time</div>
                 <div><input type="checkbox" id="apple" name="fruits" value="apple" /> We&apos;re not always on the same page</div>
+                <div><input type="checkbox" id="apple" name="fruits" value="apple" />We don&apos;t always make time</div>
                 <div><input type="checkbox" id="apple" name="fruits" value="apple" />It&apos;s hard to start those kinds of conversations</div>
             </div>
             </div>:null}
