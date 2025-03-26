@@ -8,7 +8,7 @@ export async function POST(req,res){
         from: 'onboarding@resend.dev',
         to: data.email,
         subject: `Hey ${data.name}, You Have Been Invited To Join Drip`,
-        html: `<p>${data.message} Here is your link to join <a href="http://localhost:3000/questions/${data.email}">Drip</a>!</p>`
+        html: `<p>${data.message} Here is your link to join <a href="https://drip-one.vercel.app/questions/${data.email}">Drip</a>!</p>`
     });
     return new Response(JSON.stringify("Email sent"))
 }
