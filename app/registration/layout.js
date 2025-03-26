@@ -1,6 +1,9 @@
 export const metadata = {
     title: "Drip - Registration",
     description: "Drip - Registration",
+    icons: {
+      icon: "/logo.png", // or "/favicon.png"
+    },
 };
   
   export default function RootLayout({ children }) {

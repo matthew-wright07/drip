@@ -1,6 +1,9 @@
 export const metadata = {
   title: "Drip - For Couples",
   description: "Drip - For Couples",
+  icons: {
+    icon: "/logo.png", // or "/favicon.png"
+  },
 };
 
 export default function RootLayout({ children }) {

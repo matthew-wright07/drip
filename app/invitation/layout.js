@@ -1,6 +1,9 @@
 export const metadata = {
     title: "Drip - Partner Invitation",
     description: "Drip - Partner Invitation",
+    icons: {
+      icon: "/logo.png", // or "/favicon.png"
+    },
   };
   
   export default function RootLayout({ children }) {
