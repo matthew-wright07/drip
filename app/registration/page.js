@@ -84,7 +84,7 @@ export default function Registration() {
             <form>
                 <div className={styles.formGroup} style={{textAlign: 'center'}}>
                 <h2>Choose one to answer</h2>
-                <label htmlFor="GreatestDay">What&aposs the greatest day of your life so far? 🙂</label>
+                <label htmlFor="GreatestDay">What&#39;s the greatest day of your life so far? 🙂</label>
                 <input type='text' id='GreatestDay' name='GreatestDay' />
                 <label htmlFor="SomethingCool">Name something extra cool about your partner 🙂</label>
                 <input type='text' id='GreatestDay' name='GreatestDay' />
