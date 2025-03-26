@@ -5,11 +5,15 @@ import { useState } from 'react';
 
 export default function Questions() {
     const [questionNumber, setQuestionNumber] = useState(1);
+    const [showInput, setShowInput] = useState(false);
     function forward(){
         setQuestionNumber(questionNumber+1)
     }
     function backward(){
         setQuestionNumber(questionNumber-1)
+    }
+    function handleInput(){
+        setShowInput(true)
     }
     return (
         <div className={styles.container}>
@@ -18,7 +22,7 @@ export default function Questions() {
                 Question 1
             </h1>
             <div className={styles.questionFlex}>
-                <h2>What kind of connection are you craving more of lately?</h2>
+                <h2>What kind of connection are you craving more of lately? (choose all that apply)</h2>
                 <div><input type="checkbox" id="apple" name="fruits" value="apple" />More play and laughter</div>
                 <div><input type="checkbox" id="apple" name="fruits" value="apple" />More affection and cuddles</div>
                 <div><input type="checkbox" id="apple" name="fruits" value="apple" />Deeper conversations</div>
@@ -30,7 +34,7 @@ export default function Questions() {
                 Question 2
             </h1>
             <div className={styles.questionFlex}>
-                <h2>What tends to get in the way?</h2>
+                <h2>What tends to get in the way? (choose all that apply)</h2>
                 <div><input type="checkbox" id="apple" name="fruits" value="apple" />We get too busy</div>
                 <div><input type="checkbox" id="apple" name="fruits" value="apple" />We don&apos;t always make time</div>
                 <div><input type="checkbox" id="apple" name="fruits" value="apple" /> We&apos;re not always on the same page</div>
@@ -43,8 +47,9 @@ export default function Questions() {
             </h1>
             <div className={styles.questionFlex}>
                 <h2>Choose one to answer:</h2>
-                <div><input type="checkbox" id="apple" name="fruits" value="apple" />What&apos;s the greatest day of your life so far? 🙂</div>
-                <div><input type="checkbox" id="apple" name="fruits" value="apple" />Name something extra cool about your partner 🙂</div>
+                <div><input onClick={handleInput} type="radio" id="apple" name="fruits" value="apple" />What&apos;s the greatest day of your life so far? 🙂</div>
+                <div><input onClick={handleInput} type="radio" id="apple" name="fruits" value="apple" />Name something extra cool about your partner 🙂</div>
+                {showInput?<div className={styles.formGroup} style={{margin:"10px"}}><input type = "text" placeholder="Your answer"/></div>:null}
             </div>
             </div>:null}
             {questionNumber===4?<div>
