@@ -11,7 +11,7 @@ export async function POST(req,res){
         from: 'onboarding@resend.dev',
         to: data.email,
         subject: 'Drip Invite',
-        html: `<p>Hey ${data.firstName}, here is your link to join <a href="https://www.dripsoftly.com/questions/${data.email}">Drip</a>!</p>`
+        html: `<p>Hey ${data.firstName}, here is your link to join <a href="https://www.dripsoftly.com/questions/${data.email}">Drip</a>!</p>`,
     });
     const response = await fetch(`${supabaseUrl}/rest/v1/Users`, {
         method: 'POST',
