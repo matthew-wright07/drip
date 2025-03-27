@@ -6,12 +6,15 @@ import styles from './registration.module.css';
 export default function Registration() {
     const [firstName, setFirstName] = useState('');
     const [email, setEmail] = useState('');
-    async function sendEmail(){
+    const [done, setDone] = useState(false);
+    async function sendEmail(event){
+        event.preventDefault()
         const response = await fetch('/api/email',{
             method:"POST",
             body: JSON.stringify({firstName:firstName,email:email})
         })
         const data = await response.json()
+        setDone(true)
     }
     function handleNameChange(event){
         setFirstName(event.target.value)
@@ -21,6 +24,8 @@ export default function Registration() {
     }
     return (
         <div className={styles.container}>
+            {!done?
+            <>
             <h1 className={styles.title}>
                 Welcome. This is a private community and is currently in Beta. We will email you your link to join. Please register below.
             </h1>
@@ -35,6 +40,8 @@ export default function Registration() {
 
                 <button type="submit" className={styles.enterButton}>Submit</button>
             </form>
+            </>
+            :<h1 className={styles.title} style={{justifySelf:"center"}}>Thank you!<br/> Check your email to join.</h1>}
         </div>
 )
 }

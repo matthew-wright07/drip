@@ -4,7 +4,8 @@ export default function Home() {
   return (
     <>
       <div className={styles.logo}>
-        <span className={styles.heart}>♥</span> Drip
+        <img src="altlogo.png" className={styles.heart} style={{width:"30px"}}/>
+        <p>Drip</p>
       </div>
 
       <div className={styles.content}>
@@ -21,7 +22,7 @@ export default function Home() {
         </p>
 
         <a href="/registration" className={styles.ctaButton}>
-          Start Free
+          Start
         </a>
       </div>
     </>

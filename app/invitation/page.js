@@ -10,6 +10,7 @@ export default function Invitation() {
   const [customMessage, setCustomMessage] = useState(false);
   const [email, setEmail] = useState('');
   const [name,setName] = useState('');
+  const [done, setDone] = useState(false);
 
   function handleMessageToggle(event){
     event.preventDefault();
@@ -26,15 +27,19 @@ export default function Invitation() {
     setName(event.target.value)
   }
   async function handleSubmit(event){
+    event.preventDefault()
     const response = await fetch('/api/invite',{
       method:"POST",
       body: JSON.stringify({email:email,message:message,name:name}),
     })
     const data = await response.json()
+    setDone(true)
   }
 
   return (
     <div className={styles.container}>
+      {!done?
+      <>
       <h1 className={styles.title}>Invite your partner</h1>
       <p className={styles.subtitle}>Trust me, it won&#39;t be any fun without them.</p>
 
@@ -67,6 +72,8 @@ export default function Invitation() {
           Invite
         </button>
       </form>
+      </>
+      :<h1 className={styles.title}>Thank you!<br/> Make sure they check their email to join.</h1>}
     </div>
   );
 }
