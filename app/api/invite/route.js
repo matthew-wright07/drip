@@ -8,7 +8,7 @@ const supabaseUrl = "https://javmddtmsqfytsmsjabm.supabase.co"
 export async function POST(req,res){
     const data = await req.json()
     resend.emails.send({
-        from: 'onboarding@resend.dev',
+        from: 'dripsoftly.com',
         to: data.email,
         subject: `Hey ${data.name}, You Have Been Invited To Join Drip`,
         html: `<p>${data.message} Here is your link to join <a href="https://www.dripsoftly.com/questions/${data.email}">Drip</a>!</p>`,
