@@ -11,7 +11,7 @@ export async function POST(req,res){
         from: 'onboarding@resend.dev',
         to: data.email,
         subject: `Hey ${data.name}, You Have Been Invited To Join Drip`,
-        html: `<p>${data.message} Here is your link to join <a href="https://drip-one.vercel.app/questions/${data.email}">Drip</a>!</p>`
+        html: `<p>${data.message} Here is your link to join <a href="https://www.dripsoftly.com/questions/${data.email}">Drip</a>!</p>`
     });
     const response = await fetch(`${supabaseUrl}/rest/v1/Users`, {
         method: 'POST',
